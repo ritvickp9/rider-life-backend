@@ -1,6 +1,8 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-
-connectionURL = "mongodb://localhost:27017"
+from dotenv import load_dotenv
+import os
+load_dotenv()
+connectionURL = os.getenv("MONGO_URI")
 client = AsyncIOMotorClient(connectionURL)
 
 db = "rider-dev"
